@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebpack_react=self.webpackChunkwebpack_react||[]).push([[579],{570:function(e,a,c){c.r(a);var t=c(294);a.default=()=>t.createElement("div",{className:"App-route-component"},"I am ","Phone")}}]);

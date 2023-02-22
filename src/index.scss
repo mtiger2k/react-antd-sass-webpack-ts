@@ -1,0 +1,17 @@
+$baseCls: 'App';
+
+.#{$baseCls} {
+  &-img{
+    width: 200px;
+    height: 200px;
+    background: url(./assets/img/img.jpeg) no-repeat center /contain;
+    transition: all .3s;
+    &:hover{
+      transform: scale(1.5);
+    }
+  }
+  &-route-component{
+    color: #4285f4;
+    font-weight: bold;
+  }
+}
