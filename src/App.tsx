@@ -1,9 +1,11 @@
 import React, { Suspense, lazy } from 'react'
 import { Link, Routes, Route } from 'react-router-dom'
 import './index.scss'
+import Computer from '@/components/Computer'
+import Phone from '@/components/Phone'
 
-const Computer = lazy(() => import(/* webpackChunkName:"Computer", webpackPrefetch: true*/ './components/Computer'))
-const Phone = lazy(() => import(/* webpackChunkName:"Phone", webpackPrefetch: true */ './components/Phone'))
+// const Computer = lazy(() => import(/* webpackChunkName:"Computer", webpackPrefetch: true*/ './components/Computer'))
+// const Phone = lazy(() => import(/* webpackChunkName:"Phone", webpackPrefetch: true */ './components/Phone'))
 
 const App: React.FC = () => {
   return (

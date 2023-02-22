@@ -76,7 +76,7 @@ module.exports = {
           }, {
             test: /\.(js|jsx|ts|tsx)$/,
             // 只处理 src 下的文件，排除其他如 node_modules 的处理
-            include: resolvePath('../src'),
+            include: [resolvePath('../src'), resolvePath('../library')],
             loader: 'babel-loader',
             options: {
               // 开启babel缓存
@@ -101,7 +101,8 @@ module.exports = {
       chunkFilename: isEnvProduction ? 'css/[name].[contenthash:10].chunk.css' : 'css/[name].chunk.css',
     }),
     new EsLintWebpackPlugin({
-      context: resolvePath('../src'),
+      context: resolvePath('../'),
+      files: ['src', 'library'],
       exclude: 'node_modules',
       cache: true,
       cacheLocation: resolvePath('../node_modules/.cache/.eslintCache')
@@ -111,7 +112,8 @@ module.exports = {
 
   resolve: {
     alias: {
-      '@': resolvePath('../src')
+      '@': resolvePath('../src'),
+      '@library': resolvePath('../library')
     },
     extensions: [".js", ".ts", ".jsx", ".tsx"]
   },
@@ -157,7 +159,7 @@ module.exports = {
 
   devServer: {
     host: 'localhost',
-    port: 8080,
+    port: 3000,
     open: true,
     hot: true,
     // 使用 index.html 代替所有404页面，解决使用H5的history API刷新页面导致404的问题

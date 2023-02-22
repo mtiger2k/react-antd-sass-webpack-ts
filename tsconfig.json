@@ -18,9 +18,15 @@
       "resolveJsonModule": true,
       "isolatedModules": true,
       "noEmit": true,
-      "jsx": "react-jsx"
+      "jsx": "react-jsx",
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"],
+        "@library/*": ["library/*"],
+      }
     },
     "include": [
-      "src"
-    ]
+      "src", "library"
+    ],
+    "exclude": ["node_modules"]
   }
